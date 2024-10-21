@@ -1,0 +1,12 @@
+.App {
+  margin: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  select {
+    max-width: 600px;
+  }
+  div {
+    max-width: 600px;
+  }
+}
