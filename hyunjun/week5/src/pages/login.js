@@ -1,15 +1,18 @@
-// src/pages/login.js
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import './login.css';
 
-function Login() {
-  const [username, setUsername] = useState('');
+
+function Login({setUsername}) {
+  const [userid, setUserId] = useState('');
   const [password, setPassword] = useState('');
+
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // 로그인 처리 로직을 여기에 추가하세요.
-    console.log('Username:', username);
+    console.log('Username:', userid);
     console.log('Password:', password);
 
     const url = 'https://portal.inuappcenter.kr/api/members/login';
@@ -18,12 +21,12 @@ function Login() {
       'accept': '*/*',
       'Content-Type': 'application/json'
     };
-    
+
     const body = JSON.stringify({
-      "studentId": username,
+      "studentId": userid,
       "password": password
     });
-    
+
     fetch(url, {
       method: 'POST',
       headers: headers,
@@ -32,15 +35,19 @@ function Login() {
     .then(response => response.json())
     .then(data => {
       console.log('Success:', data);
+      if(data.data.accessToken){    //서버로부터 성공 응답으로 액세스토큰을 받은 경우에만 로그인 성공 처리
       localStorage.setItem('loginData', JSON.stringify(data));
+        localStorage.setItem('username', userid);
+        setUsername(userid);
+        alert('로그인 성공');
+        navigate(`/`);
+      }else{
+        alert('[서버 메시지]'+data.msg);
+      }
     })
     .catch((error) => {
       console.error('Error:', error);
     });
-    
-
-
-
   };
 
   return (
@@ -52,8 +59,8 @@ function Login() {
           <input
             type="text"
             id="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            value={userid}
+            onChange={(e) => setUserId(e.target.value)}
             required
           />
         </div>
