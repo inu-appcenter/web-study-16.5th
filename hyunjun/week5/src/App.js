@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 
 import Login from './pages/login'
 import Posts from './pages/posts'
+import Post from './pages/post'
 
 function Layout() {
   return (
@@ -31,7 +32,8 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route path='login' element={<Login />} />
           <Route path="posts" element={<Posts />} />
-        </Route>
+          <Route path="/posts/:id" element={<Post />} />
+          </Route>
       </Routes>
     </BrowserRouter>
   );
