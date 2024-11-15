@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 interface PostType {
   id: number;
@@ -16,6 +16,8 @@ const PostPage: React.FC<PostProps> = ({ posts }) => {
   const [post, setPost] = useState<PostType | null>(null);
 
   useEffect(() => {
+    console.log(posts);
+    console.log(id);
     if (id) {
       const foundPost = posts.find((post) => post.id === Number(id));
       setPost(foundPost || null);
