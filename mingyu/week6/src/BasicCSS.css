@@ -1,0 +1,15 @@
+.button2 {
+  background-color: orange;
+}
+
+#button3 {
+  background-color: yellow;
+}
+
+.buttons-wrapper {
+  background-color: green;
+
+  .button4 {
+    background-color: blue;
+  }
+}
