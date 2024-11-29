@@ -1,0 +1,83 @@
+/* posts.css */
+
+/* 전체 페이지 스타일 */
+.posts-page {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 제목 스타일 */
+.posts-page h1 {
+    font-size: 2rem;
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* 게시글 항목 스타일 */
+.post-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.post-item h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.post-item p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* 댓글 및 베스트 댓글 스타일 */
+.reply-item {
+    background-color: #f1f1f1;
+    padding: 15px;
+    border-radius: 6px;
+    margin-top: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.reply-item p {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.reply-item strong {
+    color: #333;
+}
+
+/* 베스트 댓글 섹션 */
+h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* 댓글들 섹션 */
+div > h3 {
+    font-size: 1.4rem;
+    color: #333;
+    margin-top: 30px;
+    border-top: 2px solid #ddd;
+    padding-top: 10px;
+}
+
+/* 로딩 상태 스타일 */
+.posts-page .loading {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+}
