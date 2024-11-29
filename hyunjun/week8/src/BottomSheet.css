@@ -1,0 +1,23 @@
+.bottom-sheet {
+  position: fixed;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  background: white;
+  border-radius: 16px 16px 0 0;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
+  transition: bottom 0.3s ease;
+}
+
+.bottom-sheet.open {
+  bottom: 0;
+}
+
+.sheet-header {
+  padding: 16px;
+  text-align: right;
+}
+
+.sheet-content {
+  padding: 16px;
+}
